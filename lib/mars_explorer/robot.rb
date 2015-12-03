@@ -1,6 +1,6 @@
 module MarsExplorer
   class Robot
-    def initialize(args)
+    def initialize(args = {})
       @x = args.fetch(:x, MarsExplorer::Axis.new(0))
       @y = args.fetch(:y, MarsExplorer::Axis.new(0))
       @nose = args.fetch(:nose, 'N')
