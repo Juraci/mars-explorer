@@ -30,7 +30,7 @@ module MarsExplorer
     end
 
     def move
-      axis[nose.to_sym][:key].value += axis[nose.to_sym][:value]
+      axis_selector[nose.to_sym][:axis].value += axis_selector[nose.to_sym][:value]
     end
 
     def turn(direction)
@@ -49,12 +49,12 @@ module MarsExplorer
         L: { N: 'W', W: 'S', S: 'E', E: 'N' } }
     end
 
-    def axis
+    def axis_selector
       {
-        N: {key: @y, value: 1},
-        E: {key: @x, value: 1},
-        S: {key: @y, value: -1},
-        W: {key: @x, value: -1}
+        N: { axis: @y, value: 1 },
+        E: { axis: @x, value: 1 },
+        S: { axis: @y, value: -1 },
+        W: { axis: @x, value: -1 }
       }
     end
   end
