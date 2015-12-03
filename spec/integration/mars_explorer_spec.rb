@@ -13,7 +13,7 @@ describe 'Mars Explorer API' do
     end
 
     context 'when posting a rotation command' do
-      it 'returns (2, 0, S )' do
+      it 'returns (2, 0, S)' do
         post '/rest/mars/MMRMMRMM'
 
         expect(last_response.status).to eq 200 
