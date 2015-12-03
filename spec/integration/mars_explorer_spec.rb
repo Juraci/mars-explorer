@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe 'Mars Explorer API' do
 
-  describe 'POST /rest/mars/' do
-    context 'when a moviment command is issued' do
+  describe 'POST /rest/mars/:command' do
+    context 'when posting a moviment command' do
       it 'returns (0, 2, N)' do
         post '/rest/mars/MM'
 
