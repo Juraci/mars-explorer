@@ -1,13 +1,13 @@
 module MarsExplorer
   class Robot
     def initialize(args = {})
-      @x = args.fetch(:x, MarsExplorer::Axis.new(0))
-      @y = args.fetch(:y, MarsExplorer::Axis.new(0))
+      @x = args.fetch(:x, MarsExplorer::Axis.new)
+      @y = args.fetch(:y, MarsExplorer::Axis.new)
       @nose = args.fetch(:nose, 'N')
     end
 
     def move
-      axis_selector[nose.to_sym][:axis].value += axis_selector[nose.to_sym][:value]
+      can_move? ? axis.value += increment_value : false
     end
 
     def turn(direction)
@@ -20,6 +20,18 @@ module MarsExplorer
 
     private
     attr_reader :nose
+
+    def can_move?
+      axis.value.abs < axis.limit
+    end
+
+    def increment_value
+      axis_selector[nose.to_sym][:value]
+    end
+
+    def axis
+      axis_selector[nose.to_sym][:axis]
+    end
 
     def directions
       { 

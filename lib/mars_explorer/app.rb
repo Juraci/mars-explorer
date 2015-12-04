@@ -5,7 +5,7 @@ module MarsExplorer
 
       command.each_char do |c|
         if c == 'M'
-          robot.move
+         halt 400 unless robot.move
         elsif c == 'R' || c == 'L'
           robot.turn c
         else

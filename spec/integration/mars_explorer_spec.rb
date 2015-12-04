@@ -37,6 +37,13 @@ describe 'Mars Explorer API' do
         expect(last_response.status).to eq 400
       end
     end
-  end
 
+    context 'when posting an invalid position' do
+      it 'returns 400 bad request' do
+        post '/rest/mars/MMMMMMMMMMMMMMMMMMMMMMMM'
+
+        expect(last_response.status).to eq 400
+      end
+    end
+  end
 end

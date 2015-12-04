@@ -63,6 +63,16 @@ module MarsExplorer
           end
         end
       end
+
+      context 'when the movement goes above the limit' do
+        it 'returns false' do
+          x = MarsExplorer::Axis.new(limit: 0)
+          y = MarsExplorer::Axis.new(limit: 0)
+
+          robot = MarsExplorer::Robot.new(x: x, y: y)
+          expect(robot.move).to be false
+        end
+      end
     end
   end
 end
