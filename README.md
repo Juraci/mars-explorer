@@ -30,11 +30,12 @@ $  bundle exec rackup config.ru -p 8080
 ```
 
 Test if it's working by submiting a simple command:
+
 ```shell
 $  curl -X POST http://localhost:8080/rest/mars/MMRMMRMM -d '' 
 ```
 
-Note that it's important to use the **-d ''** parameter on curl to explicitly send no data in the request body.
+Note that it's important to use the `-d ''` parameter on curl to explicitly send no data in the request body.
 
 ### Running the tests
 
