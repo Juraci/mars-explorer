@@ -37,8 +37,26 @@ $  curl -X POST http://localhost:8080/rest/mars/MMRMMRMM -d ''
 
 Note that it's important to use the `-d ''` parameter on curl to explicitly send no data in the request body.
 
-### Running the tests
+### Tests
+```
+ spec
+    ├── integration
+    │   └── mars_explorer_spec.rb
+    ├── mars_explorer
+        └── robot_spec.rb
+```
+
+The integration directory holds end to end tests to verify the application behavior as a whole, totally integrated.
+The mars_explorer directory holds more granular tests to verify the Robot, and Axis classes decoupled from Sinatra.
+
+To run all the tests just run the following command from the project root:
 
 ```shell
 $  bundle exec rspec 
+```
+
+To run an specific test just pass the file path as an argument:
+
+```shell
+$  bundle exec rspec spec/mars_explorer/robot_spec.rb 
 ```
