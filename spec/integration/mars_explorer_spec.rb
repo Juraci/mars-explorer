@@ -12,7 +12,7 @@ describe 'Mars Explorer API' do
       end
     end
 
-    context 'when posting a left moviment command' do
+    context 'when posting a left movement command' do
       it 'returns (0, 2, W)' do
         post '/rest/mars/MML'
 
@@ -20,6 +20,16 @@ describe 'Mars Explorer API' do
         expect(last_response.body).to eq '(0, 2, W)'
       end
     end
+
+    context 'when posting a left movement command twice' do
+      it 'returns (0, 2, W)' do
+        2.times { post '/rest/mars/MML' }
+
+        expect(last_response.status).to eq 200
+        expect(last_response.body).to eq '(0, 2, W)'
+      end
+    end
+
   end
 
 end
