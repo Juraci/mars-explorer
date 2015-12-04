@@ -8,6 +8,8 @@ module MarsExplorer
           robot.move
         elsif c == 'R' || c == 'L'
           robot.turn c
+        else
+          halt 400
         end
       end
 
