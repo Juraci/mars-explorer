@@ -2,12 +2,12 @@
 
 A simple robot controlled by a REST API made with Ruby and Sinatra.
 
-# Requirements
+### Requirements
 
 * Ruby 2.2 or later
 * Bundler latest
 
-# How to run it
+### How to run it
 
 * clone the repo
 ```shell
@@ -36,9 +36,8 @@ $  curl -X POST http://localhost:8080/rest/mars/MMRMMRMM -d ''
 
 Note that it's important to use the **-d ''** parameter on curl to explicitly send no data in the request body.
 
-# Running the tests
+### Running the tests
 
 ```shell
 $  bundle exec rspec 
 ```
-
