@@ -40,5 +40,29 @@ module MarsExplorer
         end
       end
     end
+
+    context '#move' do
+      context 'when the nose is pointing to the North' do
+        let(:robot) { MarsExplorer::Robot.new }
+
+        context 'when moving one unit' do
+          it 'returns (0, 1, N)' do
+            robot.move
+            expect(robot.position).to eq '(0, 1, N)'
+          end
+        end
+      end
+
+      context 'when the nose is pointing to the South' do
+        let(:robot) { MarsExplorer::Robot.new(nose: 'S') }
+
+        context 'when moving one unit' do
+          it 'returns (0, -1, S)' do
+            robot.move
+            expect(robot.position).to eq '(0, -1, S)'
+          end
+        end
+      end
+    end
   end
 end

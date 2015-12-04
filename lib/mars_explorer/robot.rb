@@ -22,8 +22,10 @@ module MarsExplorer
     attr_reader :nose
 
     def directions
-      { R: { N: 'E', E: 'S', S: 'W', W: 'N'}, 
-        L: { N: 'W', W: 'S', S: 'E', E: 'N' } }
+      { 
+        R: { N: 'E', E: 'S', S: 'W', W: 'N'},
+        L: { N: 'W', W: 'S', S: 'E', E: 'N' } 
+      }
     end
 
     def axis_selector
