@@ -5,7 +5,7 @@ A simple robot controlled by a REST API made with Ruby and Sinatra.
 ### Requirements
 
 * Ruby 2.2 or later
-* Bundler latest
+* latest Bundler
 
 ### How to run it
 
